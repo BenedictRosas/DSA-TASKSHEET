@@ -1,0 +1,2271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Structures Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <!-- Code highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+</head>
+<body>
+
+<header>
+  <div class="left">
+    <div class="menu" onclick="toggleSidebar()">☰</div>
+    <div class="logo">Data Structures and Algorithms</div>
+  </div>
+  <div class="right">
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Search topics..." />
+      <span class="search-icon">🔍</span>
+    </div>
+    <button id="themeToggle">Dark</button>
+  </div>
+</header>
+
+<!-- Progress Bar -->
+<div class="progress-bar-container">
+  <div class="progress-bar" id="progressBar"></div>
+  <span class="progress-text" id="progressText">0%</span>
+</div>
+
+<div class="layout">
+  <aside id="sidebar">
+    <div class="sidebar-header">
+      <h3>Topics</h3>
+      <span class="topic-count" id="topicCount">0/12 completed</span>
+    </div>
+    
+    <button class="nav-btn active" onclick="showSection('arrays', this)" data-topic="arrays">
+      <span class="nav-number">01</span>
+      <span class="nav-label">Arrays</span>
+      <span class="completion-check">✓</span> 
+    </button>
+    <button class="nav-btn" onclick="showSection('lists', this)" data-topic="lists">
+       <span class="nav-number">02</span>
+       <span class="nav-label">Lists</span>
+       <span class="completion-check">✓</span>
+    </button>
+
+    <button class="nav-btn" onclick="showSection('tuples', this)" data-topic="tuples">
+      <span class="nav-number">03</span>
+      <span class="nav-label">Tuples</span>
+      <span class="completion-check">✓</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('matrix', this)" data-topic="matrix">
+      <span class="nav-number">03</span>
+      <span class="nav-label">Matrix</span>
+      <span class="completion-check">✓</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('linked', this)" data-topic="linked">
+      <span class="nav-number">04</span>
+      <span class="nav-label">Linked Lists</span>
+      <span class="completion-check">✓</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('stack', this)" data-topic="stack">
+      <span class="nav-number">05</span>
+      <span class="nav-label">Stack</span>
+      <span class="completion-check">✓</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('queue', this)" data-topic="queue">
+      <span class="nav-number">06</span>
+      <span class="nav-label">Queue</span>
+      <span class="completion-check">✓</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('maps', this)" data-topic="maps">
+      <span class="nav-number">07</span>
+      <span class="nav-label">Maps</span>
+      <span class="completion-check">✓</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('dictionary', this)" data-topic="dictionary">
+      <span class="nav-number">08</span>
+      <span class="nav-label">Dictionary</span>
+      <span class="completion-check">✓</span>
+    </button>
+
+    <div class="sidebar-divider">
+      <span>Non-Linear DS &amp; Algorithms</span>
+    </div>
+
+    <button class="nav-btn" onclick="showSection('trees', this)" data-topic="trees">
+      <span class="nav-number">09</span>
+      <span class="nav-label">Trees</span>
+      <span class="completion-check">✓</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('graphs', this)" data-topic="graphs">
+      <span class="nav-number">10</span>
+      <span class="nav-label">Graphs</span>
+      <span class="completion-check">✓</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('sorting', this)" data-topic="sorting">
+      <span class="nav-number">11</span>
+      <span class="nav-label">Sorting Algorithms</span>
+      <span class="completion-check">✓</span>
+    </button>
+    <button class="nav-btn" onclick="showSection('searching', this)" data-topic="searching">
+      <span class="nav-number">12</span>
+      <span class="nav-label">Search Algorithms</span>
+      <span class="completion-check">✓</span>
+    </button>
+
+    <div class="sidebar-footer">
+      <button class="reset-btn" onclick="resetProgress()">Reset Progress</button>
+    </div>
+  </aside>
+
+  <main>
+    <!-- Arrays Section -->
+    <section id="arrays" class="content active">
+      <div class="content-header">
+        <h2>Arrays</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('arrays', 'presentation')" data-view="presentation">
+               Visual
+            </button>
+            <button class="toggle-btn" onclick="switchView('arrays', 'code')" data-view="code">
+               Code
+            </button>
+            <button class="toggle-btn" onclick="switchView('arrays', 'split')" data-view="split">
+               Split
+            </button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('arrays')">
+            Mark as Complete
+          </button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty easy">Easy</span>
+        <span class="time-estimate"> 15 sec read</span>
+      </div>
+
+      <!-- View Container -->
+      <div class="view-container" data-view="presentation">
+        <!-- Presentation View -->
+        <div class="presentation-view">
+          <div class="placeholder">
+            <div class="placeholder-content">
+              <p>Array Presentation Here</p>
+              <video width="640" height="360" controls>
+                 <source src="videos/Text Structures Presentation.mp4" type="video/mp4">
+                   Your browser does not support the video tag.
+              </video>
+              <div style="margin-top: 20px; padding: 20px; background: rgba(229,9,20,0.05); border-radius: 8px;">
+                <h3 style="margin-bottom: 10px;">Array Basics:</h3>
+                <ul style="text-align: left; margin-left: 20px;">
+                  <li>Contiguous memory allocation</li>
+                  <li>Fixed size in most languages</li>
+                  <li>O(1) access time by index</li>
+                  <li>Homogeneous data storage</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Code View -->
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('arrays', 'python')">Python</button>
+              <button class="lang-tab" onclick="switchLanguage('arrays', 'javascript')">JavaScript</button>
+              <button class="lang-tab" onclick="switchLanguage('arrays', 'java')">Java</button>
+              <button class="lang-tab" onclick="switchLanguage('arrays', 'cpp')">C++</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('arrays')">Copy</button>
+          </div>
+          <div class="code-content">
+            <pre class="code-block python active"><code class="language-python"># Array Operations in Python
+
+# Declaration and Initialization
+arr = [1, 2, 3, 4, 5]
+empty_arr = []
+
+# Access elements
+first = arr[0]        # 1
+last = arr[-1]        # 5
+
+# Modify elements
+arr[2] = 10           # [1, 2, 10, 4, 5]
+
+# Add elements
+arr.append(6)         # Add to end
+arr.insert(0, 0)      # Insert at index
+
+# Remove elements
+arr.pop()             # Remove last
+arr.remove(10)        # Remove specific value
+del arr[0]            # Delete by index
+
+# Common operations
+length = len(arr)
+arr.reverse()
+arr.sort()
+
+# Slicing
+subset = arr[1:4]     # Elements from index 1 to 3
+copy_arr = arr[:]     # Copy entire array
+
+# Searching
+if 3 in arr:
+    index = arr.index(3)
+
+# Iteration
+for item in arr:
+    print(item)
+
+for i, item in enumerate(arr):
+    print(f"Index {i}: {item}")
+</code></pre>
+
+            <pre class="code-block javascript"><code class="language-javascript">// Array Operations in JavaScript
+
+// Declaration and Initialization
+let arr = [1, 2, 3, 4, 5];
+let emptyArr = [];
+
+// Access elements
+let first = arr[0];
+let last = arr[arr.length - 1];
+
+// Modify elements
+arr[2] = 10;
+
+// Add elements
+arr.push(6);              // Add to end
+arr.unshift(0);           // Add to beginning
+
+// Remove elements
+arr.pop();                // Remove last
+arr.shift();              // Remove first
+arr.splice(2, 1);         // Remove at index 2
+
+// Common operations
+let length = arr.length;
+arr.reverse();
+arr.sort((a, b) => a - b);
+
+// Slicing
+let subset = arr.slice(1, 4);
+let copyArr = [...arr];
+
+// Searching
+let index = arr.indexOf(3);
+let exists = arr.includes(3);
+
+// Iteration
+arr.forEach(item => console.log(item));
+
+// Modern methods
+let doubled = arr.map(x => x * 2);
+let filtered = arr.filter(x => x > 3);
+let sum = arr.reduce((acc, val) => acc + val, 0);
+</code></pre>
+
+            <pre class="code-block java"><code class="language-java">// Array Operations in Java
+import java.util.Arrays;
+import java.util.ArrayList;
+
+// Declaration
+int[] arr = {1, 2, 3, 4, 5};
+int[] emptyArr = new int[10];
+
+// Access elements
+int first = arr[0];
+int last = arr[arr.length - 1];
+
+// Modify elements
+arr[2] = 10;
+
+// Arrays class utilities
+Arrays.sort(arr);
+int index = Arrays.binarySearch(arr, 3);
+int[] copy = Arrays.copyOf(arr, arr.length);
+
+// ArrayList for dynamic operations
+ArrayList<Integer> list = new ArrayList<>();
+list.add(1);
+list.add(0, 0);           // Insert at index
+list.remove(0);           // Remove by index
+list.size();
+
+// Iteration
+for (int i = 0; i < arr.length; i++) {
+    System.out.println(arr[i]);
+}
+
+for (int item : arr) {
+    System.out.println(item);
+}
+</code></pre>
+
+            <pre class="code-block cpp"><code class="language-cpp">// Array Operations in C++
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+// Static Array
+int arr[] = {1, 2, 3, 4, 5};
+int size = sizeof(arr) / sizeof(arr[0]);
+
+// Vector (Dynamic Array)
+std::vector&lt;int&gt; vec = {1, 2, 3, 4, 5};
+
+// Add elements
+vec.push_back(6);
+vec.insert(vec.begin(), 0);
+
+// Remove elements
+vec.pop_back();
+vec.erase(vec.begin() + 2);
+
+// Common operations
+int length = vec.size();
+std::reverse(vec.begin(), vec.end());
+std::sort(vec.begin(), vec.end());
+
+// Searching
+auto it = std::find(vec.begin(), vec.end(), 3);
+
+// Iteration
+for (int i = 0; i < vec.size(); i++) {
+    std::cout << vec[i] << std::endl;
+}
+
+for (int item : vec) {
+    std::cout << item << std::endl;
+}
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" disabled>← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('arrays')">Next →</button>
+      </div>
+    </section>
+    <section id="lists" class="content">
+  <div class="content-header">
+    <h2>Lists</h2>
+    <div class="header-actions">
+      <div class="view-toggle">
+        <button class="toggle-btn active" onclick="switchView('lists', 'presentation')">Visual</button>
+        <button class="toggle-btn" onclick="switchView('lists', 'code')">Code</button>
+        <button class="toggle-btn" onclick="switchView('lists', 'split')">Split</button>
+      </div>
+      <button class="mark-complete-btn" onclick="toggleComplete('lists')">Mark as Complete</button>
+    </div>
+  </div>
+  <div class="topic-meta">
+    <span class="difficulty easy">Easy</span>
+    <span class="time-estimate">32 sec read</span>
+  </div>
+  <div class="view-container" data-view="presentation">
+    <div class="presentation-view">
+      <div class="placeholder">
+        <div class="placeholder-content">
+          <p> List Presentation Here</p>
+          <video width="640" height="360" controls>
+               <source src="videos/Purple Orange Green Memphis Illustrative Computer Presentation.mp4" type="video/mp4">
+                   Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+    </div>
+    <div class="code-view">
+      <div class="code-header">
+        <div class="language-tabs">
+          <button class="lang-tab active" onclick="switchLanguage('lists', 'python')">Python</button>
+        </div>
+        <button class="copy-code-btn" onclick="copyCode('lists')"> Copy</button>
+      </div>
+      <div class="code-content">
+        <pre class="code-block python active"><code class="language-python"># List operations
+my_list = [1, 2, 3]
+my_list.extend([4, 5, 6])
+# Add your list code here
+</code></pre>
+      </div>
+    </div>
+  </div>
+  <div class="navigation-buttons">
+    <button class="nav-prev-btn" onclick="navigateToPrev('lists')">← Previous</button>
+    <button class="nav-next-btn" onclick="navigateToNext('lists')">Next →</button>
+  </div>
+</section>
+
+    <!-- Other sections follow the same pattern -->
+    <section id="tuples" class="content">
+      <div class="content-header">
+        <h2>Lists</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('tuples', 'presentation')"> Visual</button>
+            <button class="toggle-btn" onclick="switchView('tuples', 'code')"> Code</button>
+            <button class="toggle-btn" onclick="switchView('tuples', 'split')"> Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('tuples')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty easy">Easy</span>
+        <span class="time-estimate">⏱ 20 sec read</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="placeholder">
+            <div class="placeholder-content">
+              <p>Tuples Presenttion here</p>
+              <video width="640" height="360" controls>
+                   <source src="videos/immutable.mp4" type="video/mp4">
+                       Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('tuples', 'python')">Python</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('tuples')"> Copy</button>
+          </div>
+          <div class="code-content">
+            <pre class="code-block python active"><code class="language-python"># List operations
+my_list = [1, 2, 3]
+my_list.extend([4, 5, 6])
+# Add your list code here
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('tuples')">← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('tuples')">Next →</button>
+      </div>
+    </section>
+
+    <section id="matrix" class="content">
+      <div class="content-header">
+        <h2>Matrix</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('matrix', 'presentation')">Visual</button>
+            <button class="toggle-btn" onclick="switchView('matrix', 'code')">Code</button>
+            <button class="toggle-btn" onclick="switchView('matrix', 'split')">Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('matrix')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty medium">Medium</span>
+        <span class="time-estimate">⏱ 33 sec read</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="placeholder">
+            <div class="placeholder-content">
+              <p>Matrix Presentation Here</p>
+              <video width="640" height="360" controls>
+                   <source src="videos/_MATRIX.mp4" type="video/mp4">
+                       Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('matrix', 'python')">Python</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('matrix')">Copy</button>
+          </div>
+          <div class="code-content">
+            <pre class="code-block python active"><code class="language-python"># Matrix operations
+matrix = [[1, 2, 3], [4, 5, 6]]
+# Add your code here
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('matrix')">← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('matrix')">Next →</button>
+      </div>
+    </section>
+
+    <section id="linked" class="content">
+      <div class="content-header">
+        <h2>Linked Lists</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('linked', 'presentation')">Visual</button>
+            <button class="toggle-btn" onclick="switchView('linked', 'code')">Code</button>
+            <button class="toggle-btn" onclick="switchView('linked', 'split')">Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('linked')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty medium">Medium</span>
+        <span class="time-estimate">⏱ 22 sec read</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="placeholder">
+            <div class="placeholder-content">
+              <p>Linked List Presentation Here</p>
+              <video width="640" height="360" controls>
+                <source src="videos/DATA STRUCTURE - LINKED LISTS.mp4" type="video/mp4">
+                   Your browser does not support the video tag.
+              </video>
+
+            </div>
+          </div>
+        </div>
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('linked', 'python')">Python</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('linked')">Copy</button>
+          </div>
+          <div class="code-content">
+            <pre class="code-block python active"><code class="language-python"># Linked List
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('linked')">← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('linked')">Next →</button>
+      </div>
+    </section>
+
+    <section id="stack" class="content">
+      <div class="content-header">
+        <h2>Stack</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('stack', 'presentation')">Visual</button>
+            <button class="toggle-btn" onclick="switchView('stack', 'code')">Code</button>
+            <button class="toggle-btn" onclick="switchView('stack', 'split')">Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('stack')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty easy">Easy</span>
+        <span class="time-estimate">⏱ 18 sec read</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="placeholder">
+            <div class="placeholder-content">
+              <p>Stack Presentation Here</p>
+              <video width="640" height="360" controls>
+                   <source src="videos/PUSHt.mp4" type="video/mp4">
+                       Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('stack', 'python')">Python</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('stack')">Copy</button>
+          </div>
+          <div class="code-content">
+            <pre class="code-block python active"><code class="language-python"># Stack LIFO
+stack = []
+stack.append(1)  # push
+stack.pop()      # pop
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('stack')">← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('stack')">Next →</button>
+      </div>
+    </section>
+
+    <section id="queue" class="content">
+      <div class="content-header">
+        <h2>Queue</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('queue', 'presentation')">Visual</button>
+            <button class="toggle-btn" onclick="switchView('queue', 'code')">Code</button>
+            <button class="toggle-btn" onclick="switchView('queue', 'split')">Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('queue')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty easy">Easy</span>
+        <span class="time-estimate">⏱ 20 secc read</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="placeholder">
+            <div class="placeholder-content">
+              <p>Queue Presentation Here</p>
+              <video width="640" height="360" controls>
+                   <source src="videos/queue.mp4" type="video/mp4">
+                       Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('queue', 'python')">Python</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('queue')">Copy</button>
+          </div>
+          <div class="code-content">
+            <pre class="code-block python active"><code class="language-python"># Queue FIFO
+from collections import deque
+queue = deque()
+queue.append(1)    # enqueue
+queue.popleft()    # dequeue
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('queue')">← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('queue')">Next →</button>
+      </div>
+    </section>
+
+    <section id="maps" class="content">
+      <div class="content-header">
+        <h2>Maps</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('maps', 'presentation')">Visual</button>
+            <button class="toggle-btn" onclick="switchView('maps', 'code')">Code</button>
+            <button class="toggle-btn" onclick="switchView('maps', 'split')">Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('maps')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty medium">Medium</span>
+        <span class="time-estimate">⏱ 20 sec read</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="placeholder">
+            <div class="placeholder-content">
+              <p>Map Presentation Here</p>
+              <video width="640" height="360" controls>
+                   <source src="videos/Lab Task Sheet - Group 4.mp4" type="video/mp4">
+                       Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('maps', 'python')">Python</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('maps')">Copy</button>
+          </div>
+          <div class="code-content">
+            <pre class="code-block python active"><code class="language-python"># Map/Dict
+my_map = {"key": "value"}
+my_map["new"] = "data"
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('maps')">← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('maps')">Next →</button>
+      </div>
+    </section>
+
+    <section id="dictionary" class="content">
+      <div class="content-header">
+        <h2>Dictionary</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('dictionary', 'presentation')">Visual</button>
+            <button class="toggle-btn" onclick="switchView('dictionary', 'code')">Code</button>
+            <button class="toggle-btn" onclick="switchView('dictionary', 'split')">Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('dictionary')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty medium">Medium</span>
+        <span class="time-estimate">⏱ 10 sec read</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="placeholder">
+            <div class="placeholder-content">
+              <p>Dictionary Presentation Here</p>
+              <video width="640" height="360" controls>
+                   <source src="videos/Lab Task Sheet - Group 4 (1).mp4" type="video/mp4">
+                       Your browser does not support the video tag.
+              </video>
+            </div>
+          </div>
+        </div>
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('dictionary', 'python')">Python</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('dictionary')">Copy</button>
+          </div>
+          <div class="code-content">
+            <pre class="code-block python active"><code class="language-python"># Dictionary
+dict_ex = {}
+dict_ex["key"] = "value"
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('dictionary')">← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('dictionary')">Next →</button>
+      </div>
+    </section>
+
+    <!-- ===== TREES SECTION ===== -->
+    <section id="trees" class="content">
+      <div class="content-header">
+        <h2>Trees</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('trees', 'presentation')" data-view="presentation">Visual</button>
+            <button class="toggle-btn" onclick="switchView('trees', 'code')" data-view="code">Code</button>
+            <button class="toggle-btn" onclick="switchView('trees', 'split')" data-view="split">Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('trees')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty hard">Hard</span>
+        <span class="time-estimate">⏱ Interactive</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="viz-tabs">
+            <button class="viz-tab active" onclick="switchVizTab('bst')">🌳 BST</button>
+            <button class="viz-tab" onclick="switchVizTab('avl')">⚖️ AVL Tree</button>
+            <button class="viz-tab" onclick="switchVizTab('heap')">🔺 Heap</button>
+          </div>
+
+          <!-- BST -->
+          <div class="viz-panel active" id="viz-bst">
+            <div class="viz-info-card">
+              <h3>Binary Search Tree</h3>
+              <p>A BST stores values so that <strong>left child &lt; parent &lt; right child</strong>. This ordering enables O(log n) search, insert, and delete on balanced trees.</p>
+              <div class="complexity-row">
+                <span class="complexity-badge">Search: O(log n)</span>
+                <span class="complexity-badge">Insert: O(log n)</span>
+                <span class="complexity-badge">Delete: O(log n)</span>
+                <span class="complexity-badge warn">Worst: O(n)</span>
+              </div>
+            </div>
+            <div class="viz-controls">
+              <input type="number" id="bst-input" placeholder="Enter value…" min="1" max="99" />
+              <button class="viz-btn primary" onclick="bstInsert()">Insert</button>
+              <button class="viz-btn danger" onclick="bstDelete()">Delete</button>
+              <button class="viz-btn" onclick="bstSearch()">Search</button>
+              <button class="viz-btn ghost" onclick="bstReset()">Reset</button>
+              <button class="viz-btn ghost" onclick="bstRandom()">Random Tree</button>
+            </div>
+            <div class="viz-message" id="bst-message"></div>
+            <svg id="bst-svg" class="tree-svg"></svg>
+            <div class="traversal-section">
+              <h4>Traversals</h4>
+              <div class="traversal-btns">
+                <button class="trav-btn" onclick="bstTraverse('inorder')">In-order</button>
+                <button class="trav-btn" onclick="bstTraverse('preorder')">Pre-order</button>
+                <button class="trav-btn" onclick="bstTraverse('postorder')">Post-order</button>
+                <button class="trav-btn" onclick="bstTraverse('levelorder')">Level-order (BFS)</button>
+              </div>
+              <div class="traversal-result" id="bst-traversal"></div>
+            </div>
+          </div>
+
+          <!-- AVL -->
+          <div class="viz-panel" id="viz-avl">
+            <div class="viz-info-card">
+              <h3>AVL Tree (Self-Balancing BST)</h3>
+              <p>An AVL tree maintains a <strong>balance factor</strong> of -1, 0, or +1 at every node. After insertions or deletions, the tree performs <strong>rotations</strong> to restore balance, guaranteeing O(log n) operations.</p>
+              <div class="complexity-row">
+                <span class="complexity-badge">All ops: O(log n)</span>
+                <span class="complexity-badge">Balance factor: |h_L - h_R| ≤ 1</span>
+              </div>
+            </div>
+            <div class="viz-controls">
+              <input type="number" id="avl-input" placeholder="Enter value…" min="1" max="99" />
+              <button class="viz-btn primary" onclick="avlInsert()">Insert</button>
+              <button class="viz-btn ghost" onclick="avlReset()">Reset</button>
+              <button class="viz-btn ghost" onclick="avlDemo()">Demo (watch rotations)</button>
+            </div>
+            <div class="viz-message" id="avl-message"></div>
+            <svg id="avl-svg" class="tree-svg"></svg>
+          </div>
+
+          <!-- HEAP -->
+          <div class="viz-panel" id="viz-heap">
+            <div class="viz-info-card">
+              <h3>Binary Heap (Min &amp; Max)</h3>
+              <p>A heap is a <strong>complete binary tree</strong> satisfying the heap property. In a <em>Max-Heap</em> every parent ≥ its children. Used in priority queues and HeapSort.</p>
+              <div class="complexity-row">
+                <span class="complexity-badge">Insert: O(log n)</span>
+                <span class="complexity-badge">Extract: O(log n)</span>
+                <span class="complexity-badge">Peek: O(1)</span>
+                <span class="complexity-badge">Build: O(n)</span>
+              </div>
+            </div>
+            <div class="viz-controls">
+              <input type="number" id="heap-input" placeholder="Enter value…" min="1" max="99" />
+              <label class="heap-type-toggle">
+                <input type="checkbox" id="heap-type-checkbox" onchange="heapToggleType()" />
+                <span>Min-Heap</span>
+              </label>
+              <button class="viz-btn primary" onclick="heapInsert()">Insert</button>
+              <button class="viz-btn danger" onclick="heapExtract()">Extract Root</button>
+              <button class="viz-btn ghost" onclick="heapReset()">Reset</button>
+              <button class="viz-btn ghost" onclick="heapRandom()">Random</button>
+            </div>
+            <div class="viz-message" id="heap-message"></div>
+            <svg id="heap-svg" class="tree-svg"></svg>
+            <div class="heap-array-display" id="heap-array-display"></div>
+          </div>
+
+        </div><!-- end presentation-view -->
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('trees', 'python')">Python</button>
+              <button class="lang-tab" onclick="switchLanguage('trees', 'javascript')">JavaScript</button>
+              <button class="lang-tab" onclick="switchLanguage('trees', 'java')">Java</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('trees')">Copy</button>
+          </div>
+          <div class="code-content">
+<pre class="code-block python active"><code class="language-python"># ─── Binary Search Tree ───────────────────────────────────────
+class BSTNode:
+    def __init__(self, val):
+        self.val = val
+        self.left = self.right = None
+
+class BST:
+    def __init__(self): self.root = None
+
+    def insert(self, val):
+        def _ins(node, v):
+            if not node: return BSTNode(v)
+            if v < node.val: node.left  = _ins(node.left,  v)
+            else:            node.right = _ins(node.right, v)
+            return node
+        self.root = _ins(self.root, val)
+
+    def search(self, val):
+        node = self.root
+        while node:
+            if   val == node.val: return True
+            elif val  < node.val: node = node.left
+            else:                 node = node.right
+        return False
+
+    def inorder(self):
+        res = []
+        def dfs(n):
+            if n: dfs(n.left); res.append(n.val); dfs(n.right)
+        dfs(self.root); return res
+
+# ─── AVL Tree ─────────────────────────────────────────────────
+class AVLNode:
+    def __init__(self, val):
+        self.val = val
+        self.left = self.right = None
+        self.height = 1
+
+class AVL:
+    def height(self, n): return n.height if n else 0
+    def bf(self, n):     return self.height(n.left) - self.height(n.right)
+
+    def rotate_right(self, y):
+        x = y.left; T2 = x.right
+        x.right = y; y.left = T2
+        y.height = 1 + max(self.height(y.left), self.height(y.right))
+        x.height = 1 + max(self.height(x.left), self.height(x.right))
+        return x
+
+    def rotate_left(self, x):
+        y = x.right; T2 = y.left
+        y.left = x; x.right = T2
+        x.height = 1 + max(self.height(x.left), self.height(x.right))
+        y.height = 1 + max(self.height(y.left), self.height(y.right))
+        return y
+
+    def insert(self, node, val):
+        if not node: return AVLNode(val)
+        if val < node.val: node.left  = self.insert(node.left,  val)
+        else:              node.right = self.insert(node.right, val)
+        node.height = 1 + max(self.height(node.left), self.height(node.right))
+        bf = self.bf(node)
+        if bf > 1:
+            if val < node.left.val: return self.rotate_right(node)
+            node.left = self.rotate_left(node.left)
+            return self.rotate_right(node)
+        if bf < -1:
+            if val > node.right.val: return self.rotate_left(node)
+            node.right = self.rotate_right(node.right)
+            return self.rotate_left(node)
+        return node
+
+# ─── Max-Heap ─────────────────────────────────────────────────
+class MaxHeap:
+    def __init__(self): self.h = []
+
+    def push(self, val):
+        self.h.append(val)
+        i = len(self.h) - 1
+        while i > 0:
+            parent = (i - 1) // 2
+            if self.h[parent] < self.h[i]:
+                self.h[parent], self.h[i] = self.h[i], self.h[parent]
+                i = parent
+            else: break
+
+    def pop(self):
+        if not self.h: return None
+        self.h[0], self.h[-1] = self.h[-1], self.h[0]
+        val = self.h.pop()
+        self._sift_down(0); return val
+
+    def _sift_down(self, i):
+        n = len(self.h)
+        while True:
+            largest, l, r = i, 2*i+1, 2*i+2
+            if l < n and self.h[l] > self.h[largest]: largest = l
+            if r < n and self.h[r] > self.h[largest]: largest = r
+            if largest == i: break
+            self.h[i], self.h[largest] = self.h[largest], self.h[i]
+            i = largest
+</code></pre>
+<pre class="code-block javascript"><code class="language-javascript">// ─── Binary Search Tree ───────────────────────────────────────
+class BSTNode { constructor(v){ this.val=v; this.left=this.right=null; } }
+class BST {
+  constructor(){ this.root = null; }
+  insert(v){
+    const ins=(n,v)=>{ if(!n) return new BSTNode(v); v<n.val?n.left=ins(n.left,v):n.right=ins(n.right,v); return n; };
+    this.root = ins(this.root, v);
+  }
+  inorder(){ const res=[]; const dfs=n=>{ if(n){ dfs(n.left); res.push(n.val); dfs(n.right); } }; dfs(this.root); return res; }
+}
+
+// ─── Max-Heap ─────────────────────────────────────────────────
+class MaxHeap {
+  constructor(){ this.h=[]; }
+  push(v){ this.h.push(v); let i=this.h.length-1; while(i>0){ const p=(i-1)>>1; if(this.h[p]<this.h[i]){[this.h[p],this.h[i]]=[this.h[i],this.h[p]];i=p;}else break; } }
+  pop(){ if(!this.h.length)return null; [this.h[0],this.h[this.h.length-1]]=[this.h[this.h.length-1],this.h[0]]; const v=this.h.pop(); this._down(0); return v; }
+  _down(i){ const n=this.h.length; while(true){ let m=i,l=2*i+1,r=2*i+2; if(l<n&&this.h[l]>this.h[m])m=l; if(r<n&&this.h[r]>this.h[m])m=r; if(m===i)break; [this.h[i],this.h[m]]=[this.h[m],this.h[i]]; i=m; } }
+}
+</code></pre>
+<pre class="code-block java"><code class="language-java">// ─── Binary Search Tree ───────────────────────────────────────
+class BST {
+    static class Node { int val; Node left, right; Node(int v){val=v;} }
+    Node root;
+    Node insert(Node n, int v){
+        if(n==null) return new Node(v);
+        if(v<n.val) n.left=insert(n.left,v); else n.right=insert(n.right,v);
+        return n;
+    }
+}
+
+// ─── Max Heap ─────────────────────────────────────────────────
+import java.util.*;
+PriorityQueue&lt;Integer&gt; maxHeap = new PriorityQueue&lt;&gt;(Collections.reverseOrder());
+maxHeap.offer(10); maxHeap.offer(5); maxHeap.offer(20);
+int top = maxHeap.poll(); // 20
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('trees')">← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('trees')">Next →</button>
+      </div>
+    </section>
+
+    <!-- ===== GRAPHS SECTION ===== -->
+    <section id="graphs" class="content">
+      <div class="content-header">
+        <h2>Graphs</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('graphs', 'presentation')" data-view="presentation">Visual</button>
+            <button class="toggle-btn" onclick="switchView('graphs', 'code')" data-view="code">Code</button>
+            <button class="toggle-btn" onclick="switchView('graphs', 'split')" data-view="split">Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('graphs')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty hard">Hard</span>
+        <span class="time-estimate">⏱ Interactive</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="viz-info-card">
+            <h3>Graph Traversal — BFS &amp; DFS</h3>
+            <p>Graphs model relationships between nodes (vertices) via connections (edges). <strong>BFS</strong> explores level by level using a queue — ideal for shortest paths. <strong>DFS</strong> dives deep using a stack/recursion — ideal for cycle detection and topological sort.</p>
+            <div class="complexity-row">
+              <span class="complexity-badge">BFS: O(V + E)</span>
+              <span class="complexity-badge">DFS: O(V + E)</span>
+              <span class="complexity-badge">Space: O(V)</span>
+            </div>
+          </div>
+          <div class="viz-controls">
+            <button class="viz-btn primary" onclick="graphBFS()">▶ Run BFS</button>
+            <button class="viz-btn" onclick="graphDFS()">▶ Run DFS</button>
+            <button class="viz-btn ghost" onclick="graphReset()">Reset Colors</button>
+            <button class="viz-btn ghost" onclick="graphNewRandom()">New Graph</button>
+            <span class="viz-hint">Click a node to set start point</span>
+          </div>
+          <div class="viz-message" id="graph-message"></div>
+          <svg id="graph-svg" class="graph-svg"></svg>
+          <div class="traversal-result" id="graph-traversal"></div>
+        </div>
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('graphs', 'python')">Python</button>
+              <button class="lang-tab" onclick="switchLanguage('graphs', 'javascript')">JavaScript</button>
+              <button class="lang-tab" onclick="switchLanguage('graphs', 'java')">Java</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('graphs')">Copy</button>
+          </div>
+          <div class="code-content">
+<pre class="code-block python active"><code class="language-python">from collections import deque
+
+# ─── BFS ──────────────────────────────────────────────────────
+def bfs(graph, start):
+    visited, queue, order = set(), deque([start]), []
+    visited.add(start)
+    while queue:
+        node = queue.popleft()
+        order.append(node)
+        for nb in graph[node]:
+            if nb not in visited:
+                visited.add(nb); queue.append(nb)
+    return order
+
+# ─── DFS ──────────────────────────────────────────────────────
+def dfs(graph, start, visited=None):
+    if visited is None: visited = set()
+    visited.add(start)
+    path = [start]
+    for nb in graph[start]:
+        if nb not in visited:
+            path += dfs(graph, nb, visited)
+    return path
+
+# Example
+graph = {
+    0: [1, 2], 1: [0, 3, 4],
+    2: [0, 5], 3: [1], 4: [1], 5: [2]
+}
+print(bfs(graph, 0))   # [0, 1, 2, 3, 4, 5]
+print(dfs(graph, 0))   # [0, 1, 3, 4, 2, 5]
+</code></pre>
+<pre class="code-block javascript"><code class="language-javascript">// ─── BFS ──────────────────────────────────────────────────────
+function bfs(graph, start) {
+  const visited = new Set([start]), queue = [start], order = [];
+  while (queue.length) {
+    const node = queue.shift(); order.push(node);
+    for (const nb of (graph[node] || []))
+      if (!visited.has(nb)) { visited.add(nb); queue.push(nb); }
+  }
+  return order;
+}
+
+// ─── DFS ──────────────────────────────────────────────────────
+function dfs(graph, start, visited = new Set()) {
+  visited.add(start);
+  const path = [start];
+  for (const nb of (graph[start] || []))
+    if (!visited.has(nb)) path.push(...dfs(graph, nb, visited));
+  return path;
+}
+</code></pre>
+<pre class="code-block java"><code class="language-java">import java.util.*;
+
+// ─── BFS ──────────────────────────────────────────────────────
+void bfs(Map&lt;Integer,List&lt;Integer&gt;&gt; g, int start) {
+    Set&lt;Integer&gt; visited = new HashSet&lt;&gt;();
+    Queue&lt;Integer&gt; q = new LinkedList&lt;&gt;();
+    q.add(start); visited.add(start);
+    while (!q.isEmpty()) {
+        int n = q.poll(); System.out.print(n + " ");
+        for (int nb : g.getOrDefault(n, List.of()))
+            if (!visited.contains(nb)) { visited.add(nb); q.add(nb); }
+    }
+}
+
+// ─── DFS ──────────────────────────────────────────────────────
+void dfs(Map&lt;Integer,List&lt;Integer&gt;&gt; g, int n, Set&lt;Integer&gt; vis) {
+    vis.add(n); System.out.print(n + " ");
+    for (int nb : g.getOrDefault(n, List.of()))
+        if (!vis.contains(nb)) dfs(g, nb, vis);
+}
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('graphs')">← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('graphs')">Next →</button>
+      </div>
+    </section>
+
+    <!-- ===== SORTING SECTION ===== -->
+    <section id="sorting" class="content">
+      <div class="content-header">
+        <h2>Sorting Algorithms</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('sorting', 'presentation')" data-view="presentation">Visual</button>
+            <button class="toggle-btn" onclick="switchView('sorting', 'code')" data-view="code">Code</button>
+            <button class="toggle-btn" onclick="switchView('sorting', 'split')" data-view="split">Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('sorting')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty hard">Hard</span>
+        <span class="time-estimate">⏱ Interactive</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="viz-info-card">
+            <h3>Sorting Algorithms</h3>
+            <p>Visualize how different algorithms rearrange elements. Watch comparisons and swaps in real time. Red bars are being compared, green bars are sorted.</p>
+            <div class="complexity-row">
+              <span class="complexity-badge">Bubble: O(n²)</span>
+              <span class="complexity-badge">Selection: O(n²)</span>
+              <span class="complexity-badge">Merge: O(n log n)</span>
+              <span class="complexity-badge">Quick: O(n log n) avg</span>
+              <span class="complexity-badge">Heap: O(n log n)</span>
+            </div>
+          </div>
+          <div class="viz-controls">
+            <select id="sort-algo" class="viz-select">
+              <option value="bubble">Bubble Sort</option>
+              <option value="selection">Selection Sort</option>
+              <option value="insertion">Insertion Sort</option>
+              <option value="merge">Merge Sort</option>
+              <option value="quick">Quick Sort</option>
+              <option value="heap">Heap Sort</option>
+            </select>
+            <label class="speed-label">Speed:
+              <input type="range" id="sort-speed" min="1" max="10" value="5" />
+            </label>
+            <button class="viz-btn primary" onclick="sortStart()">▶ Sort</button>
+            <button class="viz-btn ghost" onclick="sortShuffle()">Shuffle</button>
+            <button class="viz-btn ghost" onclick="sortReset()">Reset</button>
+          </div>
+          <div class="viz-message" id="sort-message"></div>
+          <div class="sort-stats" id="sort-stats"></div>
+          <div class="sort-canvas-wrapper">
+            <canvas id="sort-canvas" class="sort-canvas"></canvas>
+          </div>
+        </div>
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('sorting', 'python')">Python</button>
+              <button class="lang-tab" onclick="switchLanguage('sorting', 'javascript')">JavaScript</button>
+              <button class="lang-tab" onclick="switchLanguage('sorting', 'java')">Java</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('sorting')">Copy</button>
+          </div>
+          <div class="code-content">
+<pre class="code-block python active"><code class="language-python"># ─── Bubble Sort ──────────────────────────────────────────────
+def bubble_sort(arr):
+    n = len(arr)
+    for i in range(n):
+        for j in range(n - i - 1):
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+    return arr
+
+# ─── Merge Sort ───────────────────────────────────────────────
+def merge_sort(arr):
+    if len(arr) <= 1: return arr
+    mid = len(arr) // 2
+    left  = merge_sort(arr[:mid])
+    right = merge_sort(arr[mid:])
+    return merge(left, right)
+
+def merge(left, right):
+    result, i, j = [], 0, 0
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]: result.append(left[i]); i += 1
+        else:                   result.append(right[j]); j += 1
+    return result + left[i:] + right[j:]
+
+# ─── Quick Sort ───────────────────────────────────────────────
+def quick_sort(arr, lo=0, hi=None):
+    if hi is None: hi = len(arr) - 1
+    if lo < hi:
+        pivot_idx = partition(arr, lo, hi)
+        quick_sort(arr, lo, pivot_idx - 1)
+        quick_sort(arr, pivot_idx + 1, hi)
+    return arr
+
+def partition(arr, lo, hi):
+    pivot, i = arr[hi], lo - 1
+    for j in range(lo, hi):
+        if arr[j] <= pivot:
+            i += 1; arr[i], arr[j] = arr[j], arr[i]
+    arr[i+1], arr[hi] = arr[hi], arr[i+1]
+    return i + 1
+
+# ─── Heap Sort ────────────────────────────────────────────────
+def heap_sort(arr):
+    n = len(arr)
+    for i in range(n//2 - 1, -1, -1):
+        heapify(arr, n, i)
+    for i in range(n-1, 0, -1):
+        arr[0], arr[i] = arr[i], arr[0]
+        heapify(arr, i, 0)
+    return arr
+
+def heapify(arr, n, i):
+    largest, l, r = i, 2*i+1, 2*i+2
+    if l < n and arr[l] > arr[largest]: largest = l
+    if r < n and arr[r] > arr[largest]: largest = r
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+</code></pre>
+<pre class="code-block javascript"><code class="language-javascript">// Bubble Sort
+function bubbleSort(arr) {
+  for (let i=0; i<arr.length; i++)
+    for (let j=0; j<arr.length-i-1; j++)
+      if (arr[j]>arr[j+1]) [arr[j],arr[j+1]]=[arr[j+1],arr[j]];
+  return arr;
+}
+
+// Merge Sort
+function mergeSort(arr) {
+  if (arr.length<=1) return arr;
+  const mid=arr.length>>1;
+  const merge=(l,r)=>{ const res=[]; let i=0,j=0;
+    while(i<l.length&&j<r.length) res.push(l[i]<=r[j]?l[i++]:r[j++]);
+    return [...res,...l.slice(i),...r.slice(j)]; };
+  return merge(mergeSort(arr.slice(0,mid)), mergeSort(arr.slice(mid)));
+}
+
+// Quick Sort
+function quickSort(arr, lo=0, hi=arr.length-1) {
+  if (lo<hi) {
+    let p=lo-1, pivot=arr[hi];
+    for (let j=lo;j<hi;j++) if(arr[j]<=pivot){p++;[arr[p],arr[j]]=[arr[j],arr[p]];}
+    [arr[p+1],arr[hi]]=[arr[hi],arr[p+1]];
+    quickSort(arr,lo,p); quickSort(arr,p+2,hi);
+  }
+  return arr;
+}
+</code></pre>
+<pre class="code-block java"><code class="language-java">// Bubble Sort
+void bubbleSort(int[] arr) {
+    int n = arr.length;
+    for (int i=0; i<n; i++)
+        for (int j=0; j<n-i-1; j++)
+            if (arr[j]>arr[j+1]) { int t=arr[j]; arr[j]=arr[j+1]; arr[j+1]=t; }
+}
+
+// Merge Sort
+void mergeSort(int[] arr, int l, int r) {
+    if (l<r) { int m=(l+r)/2; mergeSort(arr,l,m); mergeSort(arr,m+1,r); merge(arr,l,m,r); }
+}
+void merge(int[] arr, int l, int m, int r) {
+    int[] L=Arrays.copyOfRange(arr,l,m+1), R=Arrays.copyOfRange(arr,m+1,r+1);
+    int i=0,j=0,k=l;
+    while(i<L.length&&j<R.length) arr[k++]=(L[i]<=R[j])?L[i++]:R[j++];
+    while(i<L.length) arr[k++]=L[i++];
+    while(j<R.length) arr[k++]=R[j++];
+}
+
+// Quick Sort
+int partition(int[] arr, int lo, int hi) {
+    int pivot=arr[hi], i=lo-1;
+    for(int j=lo;j<hi;j++) if(arr[j]<=pivot){i++;int t=arr[i];arr[i]=arr[j];arr[j]=t;}
+    int t=arr[i+1];arr[i+1]=arr[hi];arr[hi]=t; return i+1;
+}
+void quickSort(int[] arr, int lo, int hi) {
+    if(lo<hi){int p=partition(arr,lo,hi);quickSort(arr,lo,p-1);quickSort(arr,p+1,hi);}
+}
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('sorting')">← Previous</button>
+        <button class="nav-next-btn" onclick="navigateToNext('sorting')">Next →</button>
+      </div>
+    </section>
+
+    <!-- ===== SEARCH ALGORITHMS SECTION ===== -->
+    <section id="searching" class="content">
+      <div class="content-header">
+        <h2>Search Algorithms</h2>
+        <div class="header-actions">
+          <div class="view-toggle">
+            <button class="toggle-btn active" onclick="switchView('searching', 'presentation')" data-view="presentation">Visual</button>
+            <button class="toggle-btn" onclick="switchView('searching', 'code')" data-view="code">Code</button>
+            <button class="toggle-btn" onclick="switchView('searching', 'split')" data-view="split">Split</button>
+          </div>
+          <button class="mark-complete-btn" onclick="toggleComplete('searching')">Mark as Complete</button>
+        </div>
+      </div>
+      <div class="topic-meta">
+        <span class="difficulty medium">Medium</span>
+        <span class="time-estimate">⏱ Interactive</span>
+      </div>
+      <div class="view-container" data-view="presentation">
+        <div class="presentation-view">
+          <div class="viz-info-card">
+            <h3>Search Algorithms</h3>
+            <p>Compare <strong>Linear Search</strong> (works on any array, checks one by one) and <strong>Binary Search</strong> (requires sorted array, eliminates half each step). Watch the algorithm step through each element.</p>
+            <div class="complexity-row">
+              <span class="complexity-badge">Linear: O(n)</span>
+              <span class="complexity-badge">Binary: O(log n)</span>
+              <span class="complexity-badge warn">Binary requires sorted array</span>
+            </div>
+          </div>
+          <div class="viz-controls">
+            <select id="search-algo" class="viz-select">
+              <option value="linear">Linear Search</option>
+              <option value="binary">Binary Search</option>
+            </select>
+            <input type="number" id="search-target" placeholder="Search for…" min="1" max="99" />
+            <button class="viz-btn primary" onclick="searchStart()">▶ Search</button>
+            <button class="viz-btn ghost" onclick="searchReset()">New Array</button>
+          </div>
+          <div class="viz-message" id="search-message"></div>
+          <div class="search-canvas-wrapper">
+            <canvas id="search-canvas" class="search-canvas"></canvas>
+          </div>
+        </div>
+        <div class="code-view">
+          <div class="code-header">
+            <div class="language-tabs">
+              <button class="lang-tab active" onclick="switchLanguage('searching', 'python')">Python</button>
+              <button class="lang-tab" onclick="switchLanguage('searching', 'javascript')">JavaScript</button>
+              <button class="lang-tab" onclick="switchLanguage('searching', 'java')">Java</button>
+            </div>
+            <button class="copy-code-btn" onclick="copyCode('searching')">Copy</button>
+          </div>
+          <div class="code-content">
+<pre class="code-block python active"><code class="language-python"># ─── Linear Search ────────────────────────────────────────────
+def linear_search(arr, target):
+    for i, val in enumerate(arr):
+        if val == target:
+            return i   # found at index i
+    return -1          # not found
+
+# ─── Binary Search (iterative) ────────────────────────────────
+def binary_search(arr, target):
+    lo, hi = 0, len(arr) - 1
+    while lo <= hi:
+        mid = (lo + hi) // 2
+        if arr[mid] == target:   return mid
+        elif arr[mid] < target:  lo = mid + 1
+        else:                    hi = mid - 1
+    return -1
+
+# ─── Binary Search (recursive) ────────────────────────────────
+def binary_search_rec(arr, target, lo=0, hi=None):
+    if hi is None: hi = len(arr) - 1
+    if lo > hi:    return -1
+    mid = (lo + hi) // 2
+    if arr[mid] == target: return mid
+    if arr[mid] < target:  return binary_search_rec(arr, target, mid+1, hi)
+    return binary_search_rec(arr, target, lo, mid-1)
+</code></pre>
+<pre class="code-block javascript"><code class="language-javascript">// Linear Search
+function linearSearch(arr, target) {
+  for (let i = 0; i < arr.length; i++)
+    if (arr[i] === target) return i;
+  return -1;
+}
+
+// Binary Search (iterative)
+function binarySearch(arr, target) {
+  let lo = 0, hi = arr.length - 1;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (arr[mid] === target) return mid;
+    arr[mid] < target ? lo = mid + 1 : hi = mid - 1;
+  }
+  return -1;
+}
+
+// Binary Search (recursive)
+function binarySearchRec(arr, target, lo=0, hi=arr.length-1) {
+  if (lo > hi) return -1;
+  const mid = (lo + hi) >> 1;
+  if (arr[mid] === target) return mid;
+  return arr[mid] < target
+    ? binarySearchRec(arr, target, mid+1, hi)
+    : binarySearchRec(arr, target, lo, mid-1);
+}
+</code></pre>
+<pre class="code-block java"><code class="language-java">// Linear Search
+int linearSearch(int[] arr, int target) {
+    for (int i = 0; i < arr.length; i++)
+        if (arr[i] == target) return i;
+    return -1;
+}
+
+// Binary Search (iterative)
+int binarySearch(int[] arr, int target) {
+    int lo = 0, hi = arr.length - 1;
+    while (lo <= hi) {
+        int mid = (lo + hi) / 2;
+        if (arr[mid] == target) return mid;
+        else if (arr[mid] < target) lo = mid + 1;
+        else hi = mid - 1;
+    }
+    return -1;
+}
+
+// Binary Search (recursive)
+int binarySearchRec(int[] arr, int target, int lo, int hi) {
+    if (lo > hi) return -1;
+    int mid = (lo + hi) / 2;
+    if (arr[mid] == target) return mid;
+    return arr[mid] < target
+        ? binarySearchRec(arr, target, mid+1, hi)
+        : binarySearchRec(arr, target, lo, mid-1);
+}
+</code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="navigation-buttons">
+        <button class="nav-prev-btn" onclick="navigateToPrev('searching')">← Previous</button>
+        <button class="nav-next-btn" disabled>Next →</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+</div>
+
+<!-- Keyboard Shortcuts Help -->
+<div class="shortcuts-hint" id="shortcutsHint">
+  Press <kbd>?</kbd> for keyboard shortcuts
+</div>
+
+<!-- Keyboard Shortcuts Modal -->
+<div class="modal" id="shortcutsModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3>⌨️ Keyboard Shortcuts</h3>
+      <button class="close-modal" onclick="closeShortcutsModal()">×</button>
+    </div>
+    <div class="shortcuts-list">
+      <div class="shortcut-item">
+        <kbd>→</kbd> <span>Next topic</span>
+      </div>
+      <div class="shortcut-item">
+        <kbd>←</kbd> <span>Previous topic</span>
+      </div>
+      <div class="shortcut-item">
+        <kbd>Space</kbd> <span>Mark as complete</span>
+      </div>
+      <div class="shortcut-item">
+        <kbd>C</kbd> <span>Toggle code view</span>
+      </div>
+      <div class="shortcut-item">
+        <kbd>S</kbd> <span>Toggle split view</span>
+      </div>
+      <div class="shortcut-item">
+        <kbd>/</kbd> <span>Focus search</span>
+      </div>
+      <div class="shortcut-item">
+        <kbd>D</kbd> <span>Toggle dark mode</span>
+      </div>
+      <div class="shortcut-item">
+        <kbd>?</kbd> <span>Show/hide shortcuts</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => { hljs.highlightAll(); });
+</script>
+<script>
+// ================================================================
+//  TREES & GRAPHS VISUALIZATION ENGINE
+// ================================================================
+
+// ── Tab Switcher ──────────────────────────────────────────────
+function switchVizTab(id) {
+  document.querySelectorAll('.viz-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.viz-panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`.viz-tab[onclick="switchVizTab('${id}')"]`).classList.add('active');
+  document.getElementById('viz-' + id).classList.add('active');
+}
+
+function setMsg(id, text, type='info') {
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.textContent = text;
+  el.className = 'viz-message ' + type;
+}
+
+// ================================================================
+// BST
+// ================================================================
+class BSTNode { constructor(v){ this.v=v; this.l=this.r=null; } }
+
+let bstRoot = null;
+
+function bstInsertNode(root, v) {
+  if (!root) return new BSTNode(v);
+  if (v < root.v) root.l = bstInsertNode(root.l, v);
+  else if (v > root.v) root.r = bstInsertNode(root.r, v);
+  return root;
+}
+
+function bstDeleteNode(root, v) {
+  if (!root) return null;
+  if (v < root.v) { root.l = bstDeleteNode(root.l, v); return root; }
+  if (v > root.v) { root.r = bstDeleteNode(root.r, v); return root; }
+  if (!root.l) return root.r;
+  if (!root.r) return root.l;
+  let min = root.r; while (min.l) min = min.l;
+  root.v = min.v;
+  root.r = bstDeleteNode(root.r, min.v);
+  return root;
+}
+
+function bstInsert() {
+  const v = parseInt(document.getElementById('bst-input').value);
+  if (isNaN(v)) return setMsg('bst-message', 'Please enter a number.', 'warn');
+  bstRoot = bstInsertNode(bstRoot, v);
+  document.getElementById('bst-input').value = '';
+  setMsg('bst-message', `Inserted ${v}`, 'success');
+  drawBST('bst-svg', bstRoot, []);
+}
+
+function bstDelete() {
+  const v = parseInt(document.getElementById('bst-input').value);
+  if (isNaN(v)) return setMsg('bst-message', 'Please enter a number.', 'warn');
+  bstRoot = bstDeleteNode(bstRoot, v);
+  document.getElementById('bst-input').value = '';
+  setMsg('bst-message', `Deleted ${v}`, 'danger');
+  drawBST('bst-svg', bstRoot, []);
+}
+
+function bstSearch() {
+  const v = parseInt(document.getElementById('bst-input').value);
+  if (isNaN(v)) return setMsg('bst-message', 'Please enter a number.', 'warn');
+  const path = [];
+  let node = bstRoot;
+  while (node) {
+    path.push(node.v);
+    if (v === node.v) break;
+    node = v < node.v ? node.l : node.r;
+  }
+  const found = path[path.length-1] === v;
+  setMsg('bst-message', found ? `Found ${v}! Path: ${path.join(' → ')}` : `${v} not found. Searched: ${path.join(' → ')}`, found ? 'success' : 'warn');
+  drawBST('bst-svg', bstRoot, path, v);
+}
+
+function bstReset() { bstRoot = null; drawBST('bst-svg', bstRoot, []); document.getElementById('bst-traversal').textContent=''; setMsg('bst-message',''); }
+
+function bstRandom() {
+  bstRoot = null;
+  const vals = [...Array(9)].map(() => Math.floor(Math.random()*80)+10);
+  vals.forEach(v => bstRoot = bstInsertNode(bstRoot, v));
+  setMsg('bst-message', 'Random tree generated!', 'success');
+  drawBST('bst-svg', bstRoot, []);
+}
+
+function bstTraverse(type) {
+  const result = [];
+  const inorder = n => { if(n){ inorder(n.l); result.push(n.v); inorder(n.r); } };
+  const preorder = n => { if(n){ result.push(n.v); preorder(n.l); preorder(n.r); } };
+  const postorder = n => { if(n){ postorder(n.l); postorder(n.r); result.push(n.v); } };
+  const level = root => {
+    if (!root) return;
+    const q = [root];
+    while (q.length) { const n = q.shift(); result.push(n.v); if(n.l) q.push(n.l); if(n.r) q.push(n.r); }
+  };
+  if (type==='inorder') inorder(bstRoot);
+  else if (type==='preorder') preorder(bstRoot);
+  else if (type==='postorder') postorder(bstRoot);
+  else level(bstRoot);
+  const labels = {inorder:'In-order (sorted)',preorder:'Pre-order',postorder:'Post-order',levelorder:'Level-order (BFS)'};
+  document.getElementById('bst-traversal').innerHTML = `<strong>${labels[type]}:</strong> ${result.join(' → ')}`;
+}
+
+// ── Tree Drawing Engine ───────────────────────────────────────
+function treeLayout(node, depth=0, counter={v:0}) {
+  if (!node) return null;
+  const left = treeLayout(node.l||node.left, depth+1, counter);
+  const x = counter.v++;
+  const right = treeLayout(node.r||node.right, depth+1, counter);
+  return { v: node.v||node.val, x, y: depth, left, right, bf: node.bf };
+}
+
+function drawTree(svgId, layoutNode, highlighted=[], target=null, showBF=false) {
+  const svg = document.getElementById(svgId);
+  svg.innerHTML = '';
+  if (!layoutNode) { svg.setAttribute('height','80'); svg.innerHTML='<text x="20" y="40" fill="var(--text)" font-size="14" opacity="0.5">Tree is empty</text>'; return; }
+
+  // collect all nodes
+  const nodes = [];
+  const collect = n => { if(n){ collect(n.left); nodes.push(n); collect(n.right); } };
+  collect(layoutNode);
+
+  const W = svg.getBoundingClientRect().width || 700;
+  const minX = Math.min(...nodes.map(n=>n.x));
+  const maxX = Math.max(...nodes.map(n=>n.x));
+  const maxY = Math.max(...nodes.map(n=>n.y));
+  const paddingH = 50, paddingV = 50;
+  const cellW = maxX === minX ? 1 : (W - paddingH*2) / (maxX - minX);
+  const cellH = 70;
+  const H = (maxY+1)*cellH + paddingV*2;
+  svg.setAttribute('height', H);
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+
+  const px = x => paddingH + (x - minX) * cellW;
+  const py = y => paddingV + y * cellH;
+
+  const drawEdges = n => {
+    if (!n) return;
+    if (n.left)  { const line = document.createElementNS('http://www.w3.org/2000/svg','line'); line.setAttribute('x1',px(n.x)); line.setAttribute('y1',py(n.y)); line.setAttribute('x2',px(n.left.x)); line.setAttribute('y2',py(n.left.y)); line.setAttribute('stroke','var(--border)'); line.setAttribute('stroke-width','2'); svg.appendChild(line); drawEdges(n.left); }
+    if (n.right) { const line = document.createElementNS('http://www.w3.org/2000/svg','line'); line.setAttribute('x1',px(n.x)); line.setAttribute('y1',py(n.y)); line.setAttribute('x2',px(n.right.x)); line.setAttribute('y2',py(n.right.y)); line.setAttribute('stroke','var(--border)'); line.setAttribute('stroke-width','2'); svg.appendChild(line); drawEdges(n.right); }
+  };
+  drawEdges(layoutNode);
+
+  const drawNodes = n => {
+    if (!n) return;
+    const cx = px(n.x), cy = py(n.y);
+    const isHighlighted = highlighted.includes(n.v);
+    const isTarget = n.v === target;
+    const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    circle.setAttribute('cx', cx); circle.setAttribute('cy', cy); circle.setAttribute('r', 22);
+    circle.setAttribute('fill', isTarget ? 'var(--success)' : isHighlighted ? 'var(--red)' : 'var(--card)');
+    circle.setAttribute('stroke', isHighlighted || isTarget ? 'transparent' : 'var(--red)');
+    circle.setAttribute('stroke-width', '2');
+    circle.style.filter = isHighlighted || isTarget ? 'drop-shadow(0 0 8px currentColor)' : '';
+    svg.appendChild(circle);
+
+    const text = document.createElementNS('http://www.w3.org/2000/svg','text');
+    text.setAttribute('x', cx); text.setAttribute('y', cy+5);
+    text.setAttribute('text-anchor','middle'); text.setAttribute('font-size','13');
+    text.setAttribute('font-weight','700'); text.setAttribute('fill', isHighlighted||isTarget ? 'white' : 'var(--text)');
+    text.textContent = n.v;
+    svg.appendChild(text);
+
+    if (showBF && n.bf !== undefined) {
+      const bf = document.createElementNS('http://www.w3.org/2000/svg','text');
+      bf.setAttribute('x', cx+26); bf.setAttribute('y', cy-16);
+      bf.setAttribute('font-size','10'); bf.setAttribute('fill', Math.abs(n.bf)>1?'var(--hard)':'var(--success)');
+      bf.textContent = 'bf:' + n.bf;
+      svg.appendChild(bf);
+    }
+
+    drawNodes(n.left); drawNodes(n.right);
+  };
+  drawNodes(layoutNode);
+}
+
+function drawBST(svgId, root, highlighted=[], target=null) {
+  drawTree(svgId, treeLayout(root), highlighted, target, false);
+}
+
+// ================================================================
+// AVL
+// ================================================================
+class AVLNode { constructor(v){ this.val=v; this.left=this.right=null; this.height=1; this.bf=0; } }
+
+let avlRoot = null;
+
+const avlH = n => n ? n.height : 0;
+const avlBF = n => n ? avlH(n.left) - avlH(n.right) : 0;
+const avlUpdH = n => { if(n) n.height = 1 + Math.max(avlH(n.left), avlH(n.right)); };
+
+function avlRotR(y) {
+  const x=y.left, T2=x.right; x.right=y; y.left=T2;
+  avlUpdH(y); avlUpdH(x); return x;
+}
+function avlRotL(x) {
+  const y=x.right, T2=y.left; y.left=x; x.right=T2;
+  avlUpdH(x); avlUpdH(y); return y;
+}
+function avlIns(node, v) {
+  if (!node) return new AVLNode(v);
+  if (v < node.val) node.left = avlIns(node.left, v);
+  else if (v > node.val) node.right = avlIns(node.right, v);
+  else return node;
+  avlUpdH(node);
+  const bf = avlBF(node);
+  if (bf>1 && v<node.left.val) return avlRotR(node);
+  if (bf<-1 && v>node.right.val) return avlRotL(node);
+  if (bf>1 && v>node.left.val) { node.left=avlRotL(node.left); return avlRotR(node); }
+  if (bf<-1 && v<node.right.val) { node.right=avlRotR(node.right); return avlRotL(node); }
+  return node;
+}
+
+function annotateAVL(node) {
+  if (!node) return;
+  annotateAVL(node.left); annotateAVL(node.right);
+  node.bf = avlBF(node);
+}
+
+function avlInsert() {
+  const v = parseInt(document.getElementById('avl-input').value);
+  if (isNaN(v)) return setMsg('avl-message', 'Enter a number.', 'warn');
+  const before = avlH(avlRoot);
+  avlRoot = avlIns(avlRoot, v);
+  const after = avlH(avlRoot);
+  annotateAVL(avlRoot);
+  document.getElementById('avl-input').value = '';
+  const rotated = before >= after && v !== avlRoot.val;
+  setMsg('avl-message', `Inserted ${v}${rotated?' — rotations performed!':''} | Tree height: ${after}`, 'success');
+  drawTree('avl-svg', treeLayout(avlRoot), [], null, true);
+}
+
+function avlReset() { avlRoot=null; drawTree('avl-svg', null, [], null, false); setMsg('avl-message',''); }
+
+function avlDemo() {
+  avlRoot = null;
+  const seq = [30,20,40,10,25,35,50,5,15,22,28];
+  let i = 0;
+  const step = () => {
+    if (i >= seq.length) { setMsg('avl-message','Demo complete! Notice the tree stayed balanced.','success'); return; }
+    avlRoot = avlIns(avlRoot, seq[i]);
+    annotateAVL(avlRoot);
+    setMsg('avl-message', `Inserted ${seq[i]} | Height: ${avlH(avlRoot)}`, 'info');
+    drawTree('avl-svg', treeLayout(avlRoot), [], null, true);
+    i++; setTimeout(step, 600);
+  };
+  step();
+}
+
+// ================================================================
+// HEAP
+// ================================================================
+let heapArr = [];
+let isMinHeap = false;
+
+const heapCmp = (a,b) => isMinHeap ? a < b : a > b;
+
+function heapSiftUp(i) {
+  while (i > 0) {
+    const p = (i-1) >> 1;
+    if (heapCmp(heapArr[i], heapArr[p])) { [heapArr[i],heapArr[p]]=[heapArr[p],heapArr[i]]; i=p; }
+    else break;
+  }
+}
+
+function heapSiftDown(i) {
+  const n = heapArr.length;
+  while (true) {
+    let best=i, l=2*i+1, r=2*i+2;
+    if (l<n && heapCmp(heapArr[l],heapArr[best])) best=l;
+    if (r<n && heapCmp(heapArr[r],heapArr[best])) best=r;
+    if (best===i) break;
+    [heapArr[i],heapArr[best]]=[heapArr[best],heapArr[i]]; i=best;
+  }
+}
+
+function heapInsert() {
+  const v = parseInt(document.getElementById('heap-input').value);
+  if (isNaN(v)) return setMsg('heap-message','Enter a number.','warn');
+  heapArr.push(v); heapSiftUp(heapArr.length-1);
+  document.getElementById('heap-input').value = '';
+  setMsg('heap-message', `Inserted ${v} | Root: ${heapArr[0]}`, 'success');
+  drawHeap();
+}
+
+function heapExtract() {
+  if (!heapArr.length) return setMsg('heap-message','Heap is empty.','warn');
+  const root = heapArr[0];
+  [heapArr[0],heapArr[heapArr.length-1]]=[heapArr[heapArr.length-1],heapArr[0]];
+  heapArr.pop(); heapSiftDown(0);
+  setMsg('heap-message', `Extracted root: ${root} | New root: ${heapArr[0]??'—'}`, 'danger');
+  drawHeap();
+}
+
+function heapToggleType() {
+  isMinHeap = document.getElementById('heap-type-checkbox').checked;
+  const arr = [...heapArr]; heapArr = [];
+  arr.forEach(v => { heapArr.push(v); heapSiftUp(heapArr.length-1); });
+  setMsg('heap-message', `Switched to ${isMinHeap?'Min':'Max'}-Heap`, 'info');
+  drawHeap();
+}
+
+function heapReset() { heapArr=[]; drawHeap(); setMsg('heap-message',''); }
+
+function heapRandom() {
+  heapArr=[];
+  [...Array(8)].forEach(() => { const v=Math.floor(Math.random()*80)+10; heapArr.push(v); heapSiftUp(heapArr.length-1); });
+  setMsg('heap-message','Random heap generated!','success');
+  drawHeap();
+}
+
+function drawHeap() {
+  // Build tree structure from array
+  const buildNode = i => {
+    if (i >= heapArr.length) return null;
+    return { val: heapArr[i], left: buildNode(2*i+1), right: buildNode(2*i+2) };
+  };
+  const root = buildNode(0);
+  drawTree('heap-svg', treeLayout(root), []);
+
+  // Array display
+  const disp = document.getElementById('heap-array-display');
+  disp.innerHTML = '<span class="heap-array-label">Array repr:</span> ' +
+    heapArr.map((v,i) => `<span class="heap-arr-cell" title="index ${i}">${v}</span>`).join('');
+}
+
+// ================================================================
+// GRAPH
+// ================================================================
+let graphNodes = [];
+let graphEdges = [];
+let graphStart = 0;
+let graphVisited = [];
+let graphQueue = [];
+
+function buildRandomGraph() {
+  const n = 8;
+  graphNodes = [...Array(n)].map((_, i) => ({
+    id: i, label: String.fromCharCode(65+i),
+    x: 80 + Math.cos(i * 2*Math.PI/n) * 160 + Math.random()*30-15,
+    y: 80 + Math.sin(i * 2*Math.PI/n) * 120 + Math.random()*30-15
+  }));
+  graphEdges = [];
+  // ensure connected
+  for (let i=1; i<n; i++) {
+    const j = Math.floor(Math.random()*i);
+    graphEdges.push({from:i, to:j});
+  }
+  // extra edges
+  for (let k=0; k<5; k++) {
+    const a=Math.floor(Math.random()*n), b=Math.floor(Math.random()*n);
+    if (a!==b && !graphEdges.find(e=>(e.from===a&&e.to===b)||(e.from===b&&e.to===a)))
+      graphEdges.push({from:a,to:b});
+  }
+  graphStart = 0;
+  graphVisited = [];
+  drawGraph([],[]);
+}
+
+function graphAdjList() {
+  const adj = {};
+  graphNodes.forEach(n => adj[n.id]=[]);
+  graphEdges.forEach(e => { adj[e.from].push(e.to); adj[e.to].push(e.from); });
+  return adj;
+}
+
+async function graphBFS() {
+  const adj = graphAdjList();
+  const visited = new Set([graphStart]), order = [];
+  const queue = [graphStart];
+  setMsg('graph-message','Running BFS…','info');
+  while (queue.length) {
+    const node = queue.shift(); order.push(node);
+    drawGraph([...visited], order);
+    await sleep(400);
+    for (const nb of adj[node]) {
+      if (!visited.has(nb)) { visited.add(nb); queue.push(nb); }
+    }
+  }
+  document.getElementById('graph-traversal').innerHTML = `<strong>BFS order:</strong> ${order.map(i=>graphNodes[i].label).join(' → ')}`;
+  setMsg('graph-message','BFS complete!','success');
+}
+
+async function graphDFS() {
+  const adj = graphAdjList();
+  const visited = new Set(), order = [];
+  setMsg('graph-message','Running DFS…','info');
+  const dfs = async (n) => {
+    visited.add(n); order.push(n);
+    drawGraph([...visited], order);
+    await sleep(400);
+    for (const nb of adj[n]) if (!visited.has(nb)) await dfs(nb);
+  };
+  await dfs(graphStart);
+  document.getElementById('graph-traversal').innerHTML = `<strong>DFS order:</strong> ${order.map(i=>graphNodes[i].label).join(' → ')}`;
+  setMsg('graph-message','DFS complete!','success');
+}
+
+function graphReset() {
+  drawGraph([],[]);
+  document.getElementById('graph-traversal').textContent='';
+  setMsg('graph-message','');
+}
+
+function graphNewRandom() {
+  document.getElementById('graph-traversal').textContent='';
+  setMsg('graph-message','');
+  buildRandomGraph();
+}
+
+function drawGraph(visited=[], orderList=[]) {
+  const svg = document.getElementById('graph-svg');
+  svg.innerHTML = '';
+  const W = svg.getBoundingClientRect().width || 700;
+  const H = 360;
+  svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  svg.setAttribute('height', H);
+
+  // scale nodes positions
+  const minX = Math.min(...graphNodes.map(n=>n.x));
+  const maxX = Math.max(...graphNodes.map(n=>n.x));
+  const minY = Math.min(...graphNodes.map(n=>n.y));
+  const maxY = Math.max(...graphNodes.map(n=>n.y));
+  const scaleX = x => 60 + (x-minX)/(maxX-minX||1) * (W-120);
+  const scaleY = y => 60 + (y-minY)/(maxY-minY||1) * (H-120);
+
+  // edges
+  graphEdges.forEach(e => {
+    const a=graphNodes[e.from], b=graphNodes[e.to];
+    const line = document.createElementNS('http://www.w3.org/2000/svg','line');
+    line.setAttribute('x1',scaleX(a.x)); line.setAttribute('y1',scaleY(a.y));
+    line.setAttribute('x2',scaleX(b.x)); line.setAttribute('y2',scaleY(b.y));
+    const bothVisited = visited.includes(e.from) && visited.includes(e.to);
+    line.setAttribute('stroke', bothVisited ? 'var(--red)' : 'var(--border)');
+    line.setAttribute('stroke-width', bothVisited ? '2.5' : '1.5');
+    svg.appendChild(line);
+  });
+
+  // nodes
+  graphNodes.forEach((n,i) => {
+    const cx = scaleX(n.x), cy = scaleY(n.y);
+    const isVisited = visited.includes(i);
+    const isStart = i === graphStart;
+    const orderIdx = orderList.indexOf(i);
+
+    const c = document.createElementNS('http://www.w3.org/2000/svg','circle');
+    c.setAttribute('cx',cx); c.setAttribute('cy',cy); c.setAttribute('r', 24);
+    c.setAttribute('fill', isVisited ? 'var(--red)' : 'var(--card)');
+    c.setAttribute('stroke', isStart ? 'var(--success)' : 'var(--red)');
+    c.setAttribute('stroke-width', isStart ? '3' : '2');
+    c.style.cursor = 'pointer';
+    c.addEventListener('click', () => { graphStart=i; drawGraph([],[]); setMsg('graph-message',`Start node set to ${n.label}`,'info'); });
+    svg.appendChild(c);
+
+    const t = document.createElementNS('http://www.w3.org/2000/svg','text');
+    t.setAttribute('x',cx); t.setAttribute('y',cy+5); t.setAttribute('text-anchor','middle');
+    t.setAttribute('font-size','13'); t.setAttribute('font-weight','700');
+    t.setAttribute('fill', isVisited ? 'white' : 'var(--text)'); t.textContent = n.label;
+    t.style.pointerEvents = 'none';
+    svg.appendChild(t);
+
+    if (orderIdx !== -1) {
+      const badge = document.createElementNS('http://www.w3.org/2000/svg','text');
+      badge.setAttribute('x',cx+18); badge.setAttribute('y',cy-18);
+      badge.setAttribute('font-size','10'); badge.setAttribute('font-weight','700'); badge.setAttribute('fill','var(--success)');
+      badge.textContent = orderIdx+1;
+      svg.appendChild(badge);
+    }
+  });
+}
+
+// ================================================================
+// SORT
+// ================================================================
+let sortArr = [];
+let sortRunning = false;
+let sortCancelToken = { cancelled: false };
+let sortComparisons = 0, sortSwaps = 0;
+
+function sortGenerate(n=30) {
+  sortArr = [...Array(n)].map((_,i) => Math.floor(Math.random()*280)+20);
+}
+
+function sortShuffle() {
+  sortCancelToken.cancelled = true;
+  sortRunning = false;
+  sortCancelToken = { cancelled: false };
+  for (let i=sortArr.length-1;i>0;i--) { const j=Math.floor(Math.random()*(i+1)); [sortArr[i],sortArr[j]]=[sortArr[j],sortArr[i]]; }
+  sortComparisons=sortSwaps=0;
+  drawSort(sortArr,[],[]);
+  document.getElementById('sort-stats').textContent='';
+  setMsg('sort-message','Array shuffled.','info');
+}
+
+function sortReset() {
+  sortCancelToken.cancelled = true;
+  sortRunning = false;
+  sortCancelToken = { cancelled: false };
+  sortGenerate(); sortComparisons=sortSwaps=0;
+  drawSort(sortArr,[],[]); document.getElementById('sort-stats').textContent='';
+  setMsg('sort-message','');
+}
+
+function drawSort(arr, comparing=[], sorted=[]) {
+  const canvas = document.getElementById('sort-canvas');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 700;
+  const H = canvas.offsetHeight || 300;
+  canvas.width = W; canvas.height = H;
+  ctx.clearRect(0,0,W,H);
+  const n = arr.length;
+  const barW = (W - 10) / n;
+  const maxV = Math.max(...arr) || 1;
+  const isDark = document.body.classList.contains('dark');
+
+  arr.forEach((v,i) => {
+    const bh = (v / maxV) * (H-20);
+    const x = 5 + i * barW;
+    const y = H - bh;
+    if (sorted.includes(i)) ctx.fillStyle = '#10b981';
+    else if (comparing.includes(i)) ctx.fillStyle = '#e50914';
+    else ctx.fillStyle = isDark ? '#3a3a3a' : '#d0d0d0';
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(x+1, y, barW-2, bh, 2) : ctx.rect(x+1, y, barW-2, bh);
+    ctx.fill();
+  });
+}
+
+async function sortStart() {
+  if (sortRunning) return;
+  sortCancelToken = { cancelled: false };
+  const token = sortCancelToken;
+  sortRunning = true;
+  const algo = document.getElementById('sort-algo').value;
+  const speed = parseInt(document.getElementById('sort-speed').value);
+  const delay = Math.max(5, 110 - speed*10);
+  sortComparisons=sortSwaps=0;
+  const arr = [...sortArr];
+  setMsg('sort-message', `Running ${algo} sort…`, 'info');
+
+  const cancelled = () => token.cancelled;
+
+  const update = (cmp=[], srt=[]) => {
+    sortArr = [...arr];
+    drawSort(arr, cmp, srt);
+    document.getElementById('sort-stats').textContent = `Comparisons: ${sortComparisons} | Swaps: ${sortSwaps}`;
+  };
+
+  if (algo==='bubble') {
+    outer: for (let i=0;i<arr.length;i++) {
+      for (let j=0;j<arr.length-i-1;j++) {
+        if (cancelled()) break outer;
+        sortComparisons++;
+        update([j,j+1]);
+        if (arr[j]>arr[j+1]) { [arr[j],arr[j+1]]=[arr[j+1],arr[j]]; sortSwaps++; }
+        await sleep(delay);
+      }
+    }
+  } else if (algo==='selection') {
+    for (let i=0;i<arr.length;i++) {
+      if (cancelled()) break;
+      let min=i;
+      for (let j=i+1;j<arr.length;j++) { if(cancelled()) break; sortComparisons++; update([i,j,min]); if(arr[j]<arr[min]) min=j; await sleep(delay); }
+      if (min!==i) { [arr[i],arr[min]]=[arr[min],arr[i]]; sortSwaps++; }
+    }
+  } else if (algo==='insertion') {
+    for (let i=1;i<arr.length;i++) {
+      if (cancelled()) break;
+      const key=arr[i]; let j=i-1;
+      while (j>=0 && arr[j]>key) { if(cancelled()) break; sortComparisons++; arr[j+1]=arr[j]; j--; sortSwaps++; update([j+1,i]); await sleep(delay); }
+      arr[j+1]=key;
+    }
+  } else if (algo==='merge') {
+    const merge = async (l,r) => {
+      if (cancelled() || r-l<=1) return;
+      const m=(l+r)>>1;
+      await merge(l,m); await merge(m,r);
+      const left=arr.slice(l,m), right=arr.slice(m,r);
+      let i=0,j=0,k=l;
+      while (!cancelled() && i<left.length&&j<right.length) { sortComparisons++; arr[k++]=left[i]<=right[j]?left[i++]:right[j++]; sortSwaps++; update([k-1]); await sleep(delay); }
+      while (i<left.length) arr[k++]=left[i++];
+      while (j<right.length) arr[k++]=right[j++];
+    };
+    await merge(0,arr.length);
+  } else if (algo==='quick') {
+    const partition = async (lo,hi) => {
+      const pivot=arr[hi]; let i=lo-1;
+      for (let j=lo;j<hi;j++) { if(cancelled()) return lo; sortComparisons++; update([j,hi]); if(arr[j]<=pivot){i++;[arr[i],arr[j]]=[arr[j],arr[i]];sortSwaps++;} await sleep(delay); }
+      [arr[i+1],arr[hi]]=[arr[hi],arr[i+1]]; return i+1;
+    };
+    const qs = async (lo,hi) => { if(!cancelled()&&lo<hi){const p=await partition(lo,hi);await qs(lo,p-1);await qs(p+1,hi);} };
+    await qs(0,arr.length-1);
+  } else if (algo==='heap') {
+    const n=arr.length;
+    const sift=async(n,i)=>{ if(cancelled()) return; let lg=i,l=2*i+1,r=2*i+2;if(l<n&&arr[l]>arr[lg])lg=l;if(r<n&&arr[r]>arr[lg])lg=r;if(lg!==i){[arr[i],arr[lg]]=[arr[lg],arr[i]];sortSwaps++;update([i,lg]);await sleep(delay);await sift(n,lg);}};
+    for(let i=Math.floor(n/2)-1;i>=0;i--) { if(cancelled()) break; await sift(n,i); }
+    for(let i=n-1;i>0;i--) { if(cancelled()) break; [arr[0],arr[i]]=[arr[i],arr[0]]; sortSwaps++; await sift(i,0); update([],[...Array(n-i).keys()].map(k=>i+k)); await sleep(delay); }
+  }
+
+  if (!cancelled()) {
+    sortArr = arr;
+    drawSort(arr, [], [...Array(arr.length).keys()]);
+    setMsg('sort-message', `Sort complete! Comparisons: ${sortComparisons} | Swaps: ${sortSwaps}`, 'success');
+  }
+  sortRunning = false;
+}
+
+// ================================================================
+// SEARCH
+// ================================================================
+let searchArr = [];
+let searchRunning = false;
+let searchCancelToken = { cancelled: false };
+
+function searchGenerate() {
+  searchCancelToken.cancelled = true;
+  searchRunning = false;
+  searchCancelToken = { cancelled: false };
+  searchArr = [...Array(20)].map(() => Math.floor(Math.random()*95)+5);
+  drawSearch(searchArr,[],[],-1);
+  setMsg('search-message','');
+}
+
+function searchReset() { searchGenerate(); }
+
+function drawSearch(arr, comparing=[], found=[], target=-1) {
+  const canvas = document.getElementById('search-canvas');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 700;
+  const H = canvas.offsetHeight || 180;
+  canvas.width = W; canvas.height = H;
+  ctx.clearRect(0,0,W,H);
+  const n = arr.length;
+  const cellW = (W-20)/n;
+  const isDark = document.body.classList.contains('dark');
+  const normalText = isDark ? '#e0e0e0' : '#111111';
+  const indexText  = isDark ? '#666666' : '#aaaaaa';
+
+  arr.forEach((v,i) => {
+    const x = 10 + i*cellW;
+    const y = H/2 - 28;
+    const isFound    = found.includes(i);
+    const isComparing = comparing.includes(i);
+    const bg = isFound ? '#10b981' : isComparing ? '#e50914' : (isDark ? '#2a2a2a' : '#e8e8e8');
+
+    ctx.fillStyle = bg;
+    ctx.beginPath();
+    ctx.roundRect ? ctx.roundRect(x+2, y, cellW-4, 56, 6) : ctx.rect(x+2, y, cellW-4, 56);
+    ctx.fill();
+
+    // value — always visible
+    ctx.fillStyle = (isFound || isComparing) ? 'white' : normalText;
+    ctx.font = `bold ${Math.min(14, cellW-4)}px JetBrains Mono, monospace`;
+    ctx.textAlign = 'center';
+    ctx.fillText(v, x+cellW/2, y+32);
+
+    // index label below
+    ctx.fillStyle = (isFound || isComparing) ? 'rgba(255,255,255,0.7)' : indexText;
+    ctx.font = `${Math.min(10, cellW-4)}px sans-serif`;
+    ctx.fillText(i, x+cellW/2, y+52);
+  });
+}
+
+async function searchStart() {
+  if (searchRunning) return;
+  searchCancelToken = { cancelled: false };
+  const token = searchCancelToken;
+  const target = parseInt(document.getElementById('search-target').value);
+  if (isNaN(target)) return setMsg('search-message','Enter a target value.','warn');
+  const algo = document.getElementById('search-algo').value;
+  searchRunning = true;
+  const arr = [...searchArr];
+  const cancelled = () => token.cancelled;
+
+  if (algo==='linear') {
+    setMsg('search-message','Running Linear Search…','info');
+    let found = false;
+    for (let i=0;i<arr.length;i++) {
+      if (cancelled()) break;
+      drawSearch(arr,[i],[]);
+      await sleep(300);
+      if (arr[i]===target) {
+        drawSearch(arr,[],[i]);
+        setMsg('search-message',`Found ${target} at index ${i}! Steps: ${i+1}`, 'success');
+        found=true; break;
+      }
+    }
+    if (!found && !cancelled()) { drawSearch(arr,[],[]); setMsg('search-message',`${target} not found. Checked all ${arr.length} elements.`,'warn'); }
+  } else {
+    const sorted = [...arr].sort((a,b)=>a-b);
+    setMsg('search-message','Binary Search requires sorted array — sorting first…','info');
+    drawSearch(sorted,[],[]);
+    await sleep(500);
+    if (cancelled()) { searchRunning=false; return; }
+    let lo=0, hi=sorted.length-1, steps=0, found=false;
+    while (!cancelled() && lo<=hi) {
+      const mid=(lo+hi)>>1; steps++;
+      drawSearch(sorted,[lo,mid,hi],[]);
+      await sleep(500);
+      if (cancelled()) break;
+      if (sorted[mid]===target) {
+        drawSearch(sorted,[],[mid]);
+        setMsg('search-message',`Found ${target} at index ${mid} (sorted)! Steps: ${steps}`, 'success');
+        found=true; break;
+      }
+      sorted[mid]<target ? lo=mid+1 : hi=mid-1;
+    }
+    if (!found && !cancelled()) { drawSearch(sorted,[],[]); setMsg('search-message',`${target} not found. Steps: ${steps}`,'warn'); }
+  }
+  searchRunning = false;
+}
+
+// ================================================================
+// UTILS
+// ================================================================
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+// ── Init ──────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  buildRandomGraph();
+  sortGenerate(); drawSort(sortArr,[],[]);
+  searchGenerate();
+  bstRandom();
+  avlRoot = null; drawTree('avl-svg', null);
+  heapRandom();
+});
+
+window.addEventListener('resize', () => {
+  drawBST('bst-svg', bstRoot, []);
+  drawTree('avl-svg', treeLayout(avlRoot), [], null, true);
+  drawHeap();
+  drawGraph([],[]);
+  drawSort(sortArr,[],[]);
+  drawSearch(searchArr,[],[]);
+});
+</script>
+</body>
+</html>
